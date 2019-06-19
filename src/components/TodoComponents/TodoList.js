@@ -1,15 +1,16 @@
 import React from 'react';
+import Todo from './Todo';
 
-class TodoList extends React.Component {
-    render() {
-        return (
-            <form>
-                <input placeholder='New To-Do' type='text' />
-                <button>Add To-Do</button>
-                <button>Clear Completed</button>
-            </form>
-        )
-    }
+function TodoList(props) {
+    return (
+        <div>
+            {props.todos.map(todo => {
+                return (
+                    <Todo />
+                );
+            })}
+        </div>
+    );
 }
 
 export default TodoList;
